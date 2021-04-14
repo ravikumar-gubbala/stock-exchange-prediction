@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class StockExchangeApplication {
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(StockExchangeApplication.class, args);
 	}
 
