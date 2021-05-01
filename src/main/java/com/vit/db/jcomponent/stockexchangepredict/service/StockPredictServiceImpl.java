@@ -1,10 +1,11 @@
 package com.vit.db.jcomponent.stockexchangepredict.service;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 
 import org.apache.commons.logging.Log;
 import org.apache.poi.ss.usermodel.Cell;
@@ -41,11 +42,12 @@ public class StockPredictServiceImpl implements StockPredictService {
 		}
 
 		List<String> Reader = new ArrayList<String>();
+		String filePath = "/home/soumadeepdhar/Applications/VIT Vellore/Masters Curricullum Semester II/No SQL/Stocks/file.xlsx";
+		try {
 
-		try (Scanner sc = new Scanner(content)) {
-
-			Workbook workbook = new XSSFWorkbook(content);
-			Sheet sheet = workbook.getSheet("Customers");
+			FileInputStream excelFile = new FileInputStream(new File(filePath));
+			Workbook workbook = new XSSFWorkbook(excelFile);
+			Sheet sheet = workbook.getSheet("file");
 			Iterator rows = sheet.iterator();
 
 			int rowNumber = 0;
@@ -65,31 +67,31 @@ public class StockPredictServiceImpl implements StockPredictService {
 					Cell currentCell = (Cell) cellsInRow.next();
 
 					if (cellIndex == 0) {
-						stock.setSymbol(String.valueOf(currentCell.getNumericCellValue()));
+						stock.setSymbol(String.valueOf(currentCell));
 					} else if (cellIndex == 1) {
-						stock.setSeries(String.valueOf(currentCell.getNumericCellValue()));
+						stock.setSeries(String.valueOf(currentCell));
 					} else if (cellIndex == 2) {
-						stock.setOpen(Float.valueOf((float) currentCell.getNumericCellValue()));
+						stock.setOpen(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 3) {
-						stock.setHigh(Float.valueOf((float) currentCell.getNumericCellValue()));
+						stock.setHigh(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 4) {
-						stock.setLow(Float.valueOf((float) currentCell.getNumericCellValue()));
+						stock.setLow(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 5) {
-						stock.setClose(Float.valueOf((float) currentCell.getNumericCellValue()));
+						stock.setClose(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 6) {
-						stock.setLast(Float.valueOf((float) currentCell.getNumericCellValue()));
+						stock.setLast(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 7) {
-						stock.setPrevclose(Float.valueOf((float) currentCell.getNumericCellValue()));
+						stock.setPrevclose(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 8) {
-						stock.setTottrdoty(Long.valueOf((long) currentCell.getNumericCellValue()));
+						stock.setTottrdoty(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 9) {
-						stock.setTottrdval(Long.valueOf((long) currentCell.getNumericCellValue()));
+						stock.setTottrdval(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 10) {
-						stock.setTimestamp(String.valueOf(currentCell.getNumericCellValue()));
+						stock.setTimestamp(String.valueOf(currentCell.toString()));
 					} else if (cellIndex == 11) {
-						stock.setTotaltrades(Long.valueOf((long) currentCell.getNumericCellValue()));
+						stock.setTotaltrades(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 12) {
-						stock.setIsin(String.valueOf(currentCell.getNumericCellValue()));
+						stock.setIsin(String.valueOf(currentCell.toString()));
 					}
 					cellIndex++;
 				}

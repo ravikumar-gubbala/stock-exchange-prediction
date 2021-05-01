@@ -1,5 +1,6 @@
 package com.vit.db.jcomponent.stockexchangepredict.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,16 +24,16 @@ public class StockPredictController {
 	StockPredictService stockPredictService;	
 		
 	@PostMapping("/StockExchange/upload") // received file by database (mysql) for XML code
-	public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
+	public ResponseEntity<ArrayList<StockExchange> > uploadFile(@RequestParam("file") MultipartFile file) {
 		@SuppressWarnings("unused")
 		String message = null;
 		try {
-			stockPredictService.postFileSectors(file);
+			ArrayList<StockExchange> result = stockPredictService.postFileSectors(file);
 			message = "Uploaded stock file successfully: " + file.getOriginalFilename();
-			return ResponseEntity.status(HttpStatus.OK).body(new String("Uploaded Successfully"));
+			return ResponseEntity.status(HttpStatus.OK).body(result);
 		} catch (Exception e) {
 			message = "Could not upload the file: " + file.getOriginalFilename() + "!";
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new String("Operation Failed"));
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 		}
 	}
 

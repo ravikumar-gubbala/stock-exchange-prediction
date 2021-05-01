@@ -12,10 +12,10 @@ public class StockExchange {
 	float close;
 	float last;
 	float prevclose;
-	long tottrdoty;
-	long tottrdval;
+	float tottrdoty;
+	float tottrdval;
 	String timestamp;
-	long totaltrades;
+	float totaltrades;
 	String isin;
 	/**
 	 * @return the symbol
@@ -116,25 +116,25 @@ public class StockExchange {
 	/**
 	 * @return the tottrdoty
 	 */
-	public long getTottrdoty() {
+	public float getTottrdoty() {
 		return tottrdoty;
 	}
 	/**
 	 * @param tottrdoty the tottrdoty to set
 	 */
-	public void setTottrdoty(long tottrdoty) {
+	public void setTottrdoty(float tottrdoty) {
 		this.tottrdoty = tottrdoty;
 	}
 	/**
 	 * @return the tottrdval
 	 */
-	public long getTottrdval() {
+	public float getTottrdval() {
 		return tottrdval;
 	}
 	/**
 	 * @param tottrdval the tottrdval to set
 	 */
-	public void setTottrdval(long tottrdval) {
+	public void setTottrdval(float tottrdval) {
 		this.tottrdval = tottrdval;
 	}
 	/**
@@ -152,13 +152,13 @@ public class StockExchange {
 	/**
 	 * @return the totaltrades
 	 */
-	public long getTotaltrades() {
+	public float getTotaltrades() {
 		return totaltrades;
 	}
 	/**
 	 * @param totaltrades the totaltrades to set
 	 */
-	public void setTotaltrades(long totaltrades) {
+	public void setTotaltrades(float totaltrades) {
 		this.totaltrades = totaltrades;
 	}
 	/**
@@ -189,7 +189,7 @@ public class StockExchange {
 	 * @param isin
 	 */
 	public StockExchange(String symbol, String series, float open, float high, float low, float close, float last,
-			float prevclose, long tottrdoty, long tottrdval, String timestamp, long totaltrades, String isin) {
+			float prevclose, float tottrdoty, float tottrdval, String timestamp, float totaltrades, String isin) {
 		super();
 		this.symbol = symbol;
 		this.series = series;
