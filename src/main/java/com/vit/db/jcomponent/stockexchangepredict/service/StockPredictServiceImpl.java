@@ -96,9 +96,11 @@ public class StockPredictServiceImpl implements StockPredictService {
 					cellIndex++;
 				}
 				lstStock.add(stock);
+				stockPredictDao.setStockData(stock);
 			}
 			// Close WorkBook
 			workbook.close();
+			
 			return lstStock;
 
 		} catch (IOException e) {

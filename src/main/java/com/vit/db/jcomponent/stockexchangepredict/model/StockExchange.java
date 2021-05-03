@@ -1,9 +1,12 @@
 package com.vit.db.jcomponent.stockexchangepredict.model;
 
+import javax.persistence.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "StockExchange")
 public class StockExchange {
+	@Id
 	String symbol;
 	String series;
 	float open;

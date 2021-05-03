@@ -10,6 +10,8 @@ import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 public interface StockPredictDao {
 
 	public List<StockExchange> getUnstructuredData();
+	
+	public void setStockData(StockExchange stock);
 
 	public void postSectors(String filteredName, String filteredID, String filteredLocation);
 
