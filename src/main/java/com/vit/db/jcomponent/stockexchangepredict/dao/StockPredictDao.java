@@ -15,4 +15,6 @@ public interface StockPredictDao {
 
 	public void postSectors(String filteredName, String filteredID, String filteredLocation);
 
+	public List<StockExchange> getStockData(String name);
+
 }

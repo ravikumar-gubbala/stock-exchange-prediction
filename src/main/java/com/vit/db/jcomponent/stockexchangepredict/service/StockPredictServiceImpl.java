@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.Gson;
+import com.mysql.cj.xdevapi.JsonArray;
 import com.vit.db.jcomponent.stockexchangepredict.dao.StockPredictDao;
 import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 
@@ -111,5 +113,12 @@ public class StockPredictServiceImpl implements StockPredictService {
 
 	public List<StockExchange> getUnstructuredData() {
 		return stockPredictDao.getUnstructuredData();
+	}
+
+	@Override
+	public List<StockExchange> getStockData(String name) {
+
+		
+		return stockPredictDao.getStockData(name);
 	}
 }

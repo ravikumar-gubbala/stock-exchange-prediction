@@ -16,7 +16,7 @@ public class StockPredictDaoImpl implements StockPredictDao {
 	StockRepository stockrepository;
 
 	public List<StockExchange> getUnstructuredData() {
-		List<StockExchange> stlist = new ArrayList<StockExchange>();
+		List<StockExchange> stlist = stockrepository.findAll();
 		return stlist;
 	}
 
@@ -28,6 +28,12 @@ public class StockPredictDaoImpl implements StockPredictDao {
 	@Override
 	public void setStockData(StockExchange stock) {
 		stockrepository.save(stock);
+	}
+
+	@Override
+	public ArrayList<StockExchange> getStockData(String name) {
+
+		return stockrepository.findBySymbol(name);
 	}
 
 }

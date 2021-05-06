@@ -16,4 +16,6 @@ public interface StockPredictService {
 	public ArrayList<StockExchange> postFileSectors(MultipartFile imageFile) throws FileNotFoundException, IOException;
 	
 	public List<StockExchange> getUnstructuredData();
+
+	public List<StockExchange> getStockData(String name);
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,7 @@ import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 import com.vit.db.jcomponent.stockexchangepredict.service.StockPredictService;
 
 @RestController
+@CrossOrigin(origins ="http://localhost:3000")
 @Service
 public class StockPredictController {
 
@@ -37,14 +39,19 @@ public class StockPredictController {
 		}
 	}
 
-	@GetMapping("/StockExchange/getUnstructeredData") // get data from Mongo DB
+	@GetMapping("/StockExchange") // get data from Mongo DB
 	List<StockExchange> getUnstructuredData() {
 		return stockPredictService.getUnstructuredData();
 	}
 	
+	@GetMapping("/StockExchangeData") // get single data from Mongo DB
+	List<StockExchange> getStockData(@RequestParam String name) {
+		return stockPredictService.getStockData(name);
+	}
+	
 	@GetMapping("/StockExchange/test")
 	String Test() {
-		return "Test";
+		return "Service is Working Fine";
 	}
 	
 }
