@@ -1,5 +1,8 @@
 import React from 'react';
 import Stockservice from './Stockservice';
+import "../src/App.css"
+import "../src/ContactForm.css";
+
 
 class Search extends React.Component{
     constructor(props){
@@ -40,22 +43,14 @@ class Search extends React.Component{
 render(){
     const {searchTitle} = this.state;
     return(
-        <div className="Apps">
-            <div>
-            <input
-            type="text-color black"
-            placeholder="Search by stock"
-            value={searchTitle}
-            onChange={this.onChangeSearch}
-           />
-           </div>
-           <div>
-            <button
-            className = "btn btn-outline-secondary"
-            type = "button"
-            onClick={this.searchTitle}
-            >Search</button>
-            </div>
+        <div>
+        <div className="relative flex justify-center pt-12 lg:pt-30 px-8 py-10">
+        <div className="rounded-lg shadow-2xl p-20 form">
+        <label className="text-3xl text-white-100 font-bold cursive">Search for Stock </label>
+        <input placeholder="Enter the Stock Name" value={searchTitle} onChange={this.onChangeSearch}/>
+        <button type="submit" className="text-4xl text-white-100 cursive" onClick={this.searchTitle}>Scan</button>
+        </div>
+        </div>
             <div className="Appx">
             <table className ="table table-striped">
                 {/* <thead>
