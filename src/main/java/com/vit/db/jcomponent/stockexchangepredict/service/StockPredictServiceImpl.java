@@ -29,6 +29,9 @@ public class StockPredictServiceImpl implements StockPredictService {
 
 //	@Autowired
 //	DomainRepository domainRepository;
+	
+	@Autowired
+	load2Mongo loadMongo;
 
 	@Autowired
 	StockPredictDao stockPredictDao;
@@ -118,7 +121,11 @@ public class StockPredictServiceImpl implements StockPredictService {
 	@Override
 	public List<StockExchange> getStockData(String name) {
 
-		
 		return stockPredictDao.getStockData(name);
+	}
+	
+	@Override
+	public void loadMongo() throws Exception {
+		loadMongo.loadMain(null);
 	}
 }

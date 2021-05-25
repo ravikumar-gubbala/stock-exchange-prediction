@@ -18,4 +18,6 @@ public interface StockPredictService {
 	public List<StockExchange> getUnstructuredData();
 
 	public List<StockExchange> getStockData(String name);
+
+	void loadMongo() throws Exception;
 }

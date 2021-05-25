@@ -49,8 +49,9 @@ public class StockPredictController {
 		return stockPredictService.getStockData(name);
 	}
 	
-	@GetMapping("/StockExchange/test")
-	String Test() {
+	@GetMapping("/StockExchange/loadMongo")
+	String Test() throws Exception {
+		stockPredictService.loadMongo();
 		return "Service is Working Fine";
 	}
 	
