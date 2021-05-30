@@ -1,12 +1,14 @@
 import React from "react";
-import "./App.css"
+import "../src/App.css"
 import StockDataComponent from "./StockDataComponent";
 import Prediction from "./Prediction";
-import Analyse from "./Analyse";
+import Home from "./Home";
 import Search from "./Search";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NavBar from "../src/NavBar";
+import Download from "../src/Download";
 import "../src/style.css";
+import View from "../src/View";
 import gsap from "gsap";
 
 const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
@@ -26,16 +28,20 @@ function App(){
       <div className = "BackgroundLayout"> 
       <NavBar/>
       <Switch>
-      <Route component ={StockDataComponent} path='/' exact/>
+      <Route component ={Home} path='/' exact/>
       <Route component ={Search} path='/search'/> ;
       <Route component ={Prediction} path='/prediction/'/>
-      <Route component ={Analyse} path='/analyse'/>
+      <Route component ={StockDataComponent} path='/analyse'/>
+      <Route component ={Download} path='/download'/>
+      <Route component ={View} path='/view'/>
+
+
   </Switch>
 
 
 
       </div>
-    <footer> Developed  by  Soumadeep ❤ </footer>
+    <footer className="footer"> Developed  by  Soumadeep ❤ </footer>
     </BrowserRouter>
 
     </body> 

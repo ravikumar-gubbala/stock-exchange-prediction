@@ -18,6 +18,13 @@
   align-items: center;
 }
 
+.footer {
+  height: 10px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(223, 223, 223);
+}
+
 .Tweet {
   color: black;
   background-color: black;

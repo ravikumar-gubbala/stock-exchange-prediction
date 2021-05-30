@@ -1,7 +1,7 @@
 import React from "react";
 import Stockservice from "./Stockservice";
 
-class StockDataComponent extends React.Component {
+class View extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,7 @@ class StockDataComponent extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {/* {this.state.stockexchange.map((se) => (
+            {this.state.stockexchange.map((se) => (
               <tr key={se.isin}>
                 <td> {se.symbol} </td>
                 <td> {se.series} </td>
@@ -53,7 +53,7 @@ class StockDataComponent extends React.Component {
                 <td> {se.totaltrades} </td>
                 <td> {se.isin} </td>
               </tr>
-            ))} */}
+            ))}
           </tbody>
         </table>
       </div>
@@ -61,4 +61,4 @@ class StockDataComponent extends React.Component {
   }
 }
 
-export default StockDataComponent;
+export default View;
