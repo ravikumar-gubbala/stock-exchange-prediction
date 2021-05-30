@@ -50,9 +50,8 @@ public class StockPredictController {
 	}
 	
 	@GetMapping("/StockExchange/loadMongo")
-	String Test() throws Exception {
-		stockPredictService.loadMongo();
-		return "Service is Working Fine";
+	String loadMongo(@RequestParam String gDate) throws Exception {
+		return stockPredictService.loadMongo(gDate);
 	}
 	
 }

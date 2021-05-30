@@ -30,7 +30,7 @@ class Download extends React.Component {
   }
 
   searchTitle() {
-    Stockservice.searchStockService(this.state.searchTitle)
+    Stockservice.loadMongoService(this.state.searchTitle)
       .then((response) => {
         this.setState({ searchstockexchange: response.data });
         console.log(response.data);

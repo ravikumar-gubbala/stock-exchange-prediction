@@ -72,31 +72,31 @@ public class StockPredictServiceImpl implements StockPredictService {
 					Cell currentCell = (Cell) cellsInRow.next();
 
 					if (cellIndex == 0) {
-						stock.setSymbol(String.valueOf(currentCell));
+						stock.setSYMBOL(String.valueOf(currentCell));
 					} else if (cellIndex == 1) {
-						stock.setSeries(String.valueOf(currentCell));
+						stock.setSERIES(String.valueOf(currentCell));
 					} else if (cellIndex == 2) {
-						stock.setOpen(Float.valueOf(currentCell.toString()));
+						stock.setOPEN(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 3) {
-						stock.setHigh(Float.valueOf(currentCell.toString()));
+						stock.setHIGH(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 4) {
-						stock.setLow(Float.valueOf(currentCell.toString()));
+						stock.setLAST(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 5) {
-						stock.setClose(Float.valueOf(currentCell.toString()));
+						stock.setCLOSE(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 6) {
-						stock.setLast(Float.valueOf(currentCell.toString()));
+						stock.setLAST(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 7) {
-						stock.setPrevclose(Float.valueOf(currentCell.toString()));
+						stock.setCLOSE(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 8) {
-						stock.setTottrdoty(Float.valueOf(currentCell.toString()));
+						stock.setTOTTRDQTY(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 9) {
-						stock.setTottrdval(Float.valueOf(currentCell.toString()));
+						stock.setTOTTRDQTY(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 10) {
-						stock.setTimestamp(String.valueOf(currentCell.toString()));
+						stock.setTIMESTAMP(String.valueOf(currentCell.toString()));
 					} else if (cellIndex == 11) {
-						stock.setTotaltrades(Float.valueOf(currentCell.toString()));
+						stock.setTOTALTRADES(Float.valueOf(currentCell.toString()));
 					} else if (cellIndex == 12) {
-						stock.setIsin(String.valueOf(currentCell.toString()));
+						stock.setISIN(String.valueOf(currentCell.toString()));
 					}
 					cellIndex++;
 				}
@@ -125,7 +125,7 @@ public class StockPredictServiceImpl implements StockPredictService {
 	}
 	
 	@Override
-	public void loadMongo() throws Exception {
-		loadMongo.loadMain(null);
+	public String loadMongo(String gDate) throws Exception {
+		return loadMongo.loadMain(gDate);
 	}
 }

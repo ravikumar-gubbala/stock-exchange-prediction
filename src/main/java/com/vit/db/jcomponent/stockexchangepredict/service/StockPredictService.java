@@ -19,5 +19,5 @@ public interface StockPredictService {
 
 	public List<StockExchange> getStockData(String name);
 
-	void loadMongo() throws Exception;
+	public String loadMongo(String gDate) throws Exception;
 }

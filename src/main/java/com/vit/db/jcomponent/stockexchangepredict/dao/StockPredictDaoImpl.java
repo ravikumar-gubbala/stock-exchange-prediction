@@ -33,7 +33,7 @@ public class StockPredictDaoImpl implements StockPredictDao {
 	@Override
 	public ArrayList<StockExchange> getStockData(String name) {
 
-		return stockrepository.findBySymbol(name);
+		return stockrepository.findBySYMBOL(name);
 	}
 
 }

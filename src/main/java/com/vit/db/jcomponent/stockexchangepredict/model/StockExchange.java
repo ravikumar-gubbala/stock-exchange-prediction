@@ -4,209 +4,177 @@ import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "StockExchange")
+@Document(collection = "C1")
 public class StockExchange {
 	@Id
-	String symbol;
-	String series;
-	float open;
-	float high;
-	float low;
-	float close;
-	float last;
-	float prevclose;
-	float tottrdoty;
-	float tottrdval;
-	String timestamp;
-	float totaltrades;
-	String isin;
+	String SYMBOL;
+	String SERIES;
+	float OPEN;
+	float HIGH;
+	float LOW;
+	float CLOSE;
+	float LAST;
+	float PREVCLOSE;
+	float TOTTRDQTY;
+	float TOTTRDVAL;
+	String TIMESTAMP;
+	float TOTALTRADES;
+	String ISIN;
 	/**
-	 * @return the symbol
+	 * @return the sYMBOL
 	 */
-	public String getSymbol() {
-		return symbol;
+	public String getSYMBOL() {
+		return SYMBOL;
 	}
 	/**
-	 * @param symbol the symbol to set
+	 * @param sYMBOL the sYMBOL to set
 	 */
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
+	public void setSYMBOL(String sYMBOL) {
+		SYMBOL = sYMBOL;
 	}
 	/**
-	 * @return the series
+	 * @return the sERIES
 	 */
-	public String getSeries() {
-		return series;
+	public String getSERIES() {
+		return SERIES;
 	}
 	/**
-	 * @param series the series to set
+	 * @param sERIES the sERIES to set
 	 */
-	public void setSeries(String series) {
-		this.series = series;
+	public void setSERIES(String sERIES) {
+		SERIES = sERIES;
 	}
 	/**
-	 * @return the open
+	 * @return the oPEN
 	 */
-	public float getOpen() {
-		return open;
+	public float getOPEN() {
+		return OPEN;
 	}
 	/**
-	 * @param open the open to set
+	 * @param oPEN the oPEN to set
 	 */
-	public void setOpen(float open) {
-		this.open = open;
+	public void setOPEN(float oPEN) {
+		OPEN = oPEN;
 	}
 	/**
-	 * @return the high
+	 * @return the hIGH
 	 */
-	public float getHigh() {
-		return high;
+	public float getHIGH() {
+		return HIGH;
 	}
 	/**
-	 * @param high the high to set
+	 * @param hIGH the hIGH to set
 	 */
-	public void setHigh(float high) {
-		this.high = high;
+	public void setHIGH(float hIGH) {
+		HIGH = hIGH;
 	}
 	/**
-	 * @return the low
+	 * @return the lOW
 	 */
-	public float getLow() {
-		return low;
+	public float getLOW() {
+		return LOW;
 	}
 	/**
-	 * @param low the low to set
+	 * @param lOW the lOW to set
 	 */
-	public void setLow(float low) {
-		this.low = low;
+	public void setLOW(float lOW) {
+		LOW = lOW;
 	}
 	/**
-	 * @return the close
+	 * @return the cLOSE
 	 */
-	public float getClose() {
-		return close;
+	public float getCLOSE() {
+		return CLOSE;
 	}
 	/**
-	 * @param close the close to set
+	 * @param cLOSE the cLOSE to set
 	 */
-	public void setClose(float close) {
-		this.close = close;
+	public void setCLOSE(float cLOSE) {
+		CLOSE = cLOSE;
 	}
 	/**
-	 * @return the last
+	 * @return the lAST
 	 */
-	public float getLast() {
-		return last;
+	public float getLAST() {
+		return LAST;
 	}
 	/**
-	 * @param last the last to set
+	 * @param lAST the lAST to set
 	 */
-	public void setLast(float last) {
-		this.last = last;
+	public void setLAST(float lAST) {
+		LAST = lAST;
 	}
 	/**
-	 * @return the prevclose
+	 * @return the pREVCLOSE
 	 */
-	public float getPrevclose() {
-		return prevclose;
+	public float getPREVCLOSE() {
+		return PREVCLOSE;
 	}
 	/**
-	 * @param prevclose the prevclose to set
+	 * @param pREVCLOSE the pREVCLOSE to set
 	 */
-	public void setPrevclose(float prevclose) {
-		this.prevclose = prevclose;
+	public void setPREVCLOSE(float pREVCLOSE) {
+		PREVCLOSE = pREVCLOSE;
 	}
 	/**
-	 * @return the tottrdoty
+	 * @return the tOTTRDQTY
 	 */
-	public float getTottrdoty() {
-		return tottrdoty;
+	public float getTOTTRDQTY() {
+		return TOTTRDQTY;
 	}
 	/**
-	 * @param tottrdoty the tottrdoty to set
+	 * @param tOTTRDQTY the tOTTRDQTY to set
 	 */
-	public void setTottrdoty(float tottrdoty) {
-		this.tottrdoty = tottrdoty;
+	public void setTOTTRDQTY(float tOTTRDQTY) {
+		TOTTRDQTY = tOTTRDQTY;
 	}
 	/**
-	 * @return the tottrdval
+	 * @return the tOTTRDVAL
 	 */
-	public float getTottrdval() {
-		return tottrdval;
+	public float getTOTTRDVAL() {
+		return TOTTRDVAL;
 	}
 	/**
-	 * @param tottrdval the tottrdval to set
+	 * @param tOTTRDVAL the tOTTRDVAL to set
 	 */
-	public void setTottrdval(float tottrdval) {
-		this.tottrdval = tottrdval;
+	public void setTOTTRDVAL(float tOTTRDVAL) {
+		TOTTRDVAL = tOTTRDVAL;
 	}
 	/**
-	 * @return the timestamp
+	 * @return the tIMESTAMP
 	 */
-	public String getTimestamp() {
-		return timestamp;
+	public String getTIMESTAMP() {
+		return TIMESTAMP;
 	}
 	/**
-	 * @param timestamp the timestamp to set
+	 * @param tIMESTAMP the tIMESTAMP to set
 	 */
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
+	public void setTIMESTAMP(String tIMESTAMP) {
+		TIMESTAMP = tIMESTAMP;
 	}
 	/**
-	 * @return the totaltrades
+	 * @return the tOTALTRADES
 	 */
-	public float getTotaltrades() {
-		return totaltrades;
+	public float getTOTALTRADES() {
+		return TOTALTRADES;
 	}
 	/**
-	 * @param totaltrades the totaltrades to set
+	 * @param tOTALTRADES the tOTALTRADES to set
 	 */
-	public void setTotaltrades(float totaltrades) {
-		this.totaltrades = totaltrades;
+	public void setTOTALTRADES(float tOTALTRADES) {
+		TOTALTRADES = tOTALTRADES;
 	}
 	/**
-	 * @return the isin
+	 * @return the iSIN
 	 */
-	public String getIsin() {
-		return isin;
+	public String getISIN() {
+		return ISIN;
 	}
 	/**
-	 * @param isin the isin to set
+	 * @param iSIN the iSIN to set
 	 */
-	public void setIsin(String isin) {
-		this.isin = isin;
-	}
-	/**
-	 * @param symbol
-	 * @param series
-	 * @param open
-	 * @param high
-	 * @param low
-	 * @param close
-	 * @param last
-	 * @param prevclose
-	 * @param tottrdoty
-	 * @param tottrdval
-	 * @param timestamp
-	 * @param totaltrades
-	 * @param isin
-	 */
-	public StockExchange(String symbol, String series, float open, float high, float low, float close, float last,
-			float prevclose, float tottrdoty, float tottrdval, String timestamp, float totaltrades, String isin) {
-		super();
-		this.symbol = symbol;
-		this.series = series;
-		this.open = open;
-		this.high = high;
-		this.low = low;
-		this.close = close;
-		this.last = last;
-		this.prevclose = prevclose;
-		this.tottrdoty = tottrdoty;
-		this.tottrdval = tottrdval;
-		this.timestamp = timestamp;
-		this.totaltrades = totaltrades;
-		this.isin = isin;
+	public void setISIN(String iSIN) {
+		ISIN = iSIN;
 	}
 	/**
 	 * 
@@ -216,11 +184,11 @@ public class StockExchange {
 	}
 	@Override
 	public String toString() {
-		return "StockExchange [symbol=" + symbol + ", series=" + series + ", open=" + open + ", high=" + high + ", low="
-				+ low + ", close=" + close + ", last=" + last + ", prevclose=" + prevclose + ", tottrdoty=" + tottrdoty
-				+ ", tottrdval=" + tottrdval + ", timestamp=" + timestamp + ", totaltrades=" + totaltrades + ", isin="
-				+ isin + "]";
+		return "StockExchange [SYMBOL=" + SYMBOL + ", SERIES=" + SERIES + ", OPEN=" + OPEN + ", HIGH=" + HIGH + ", LOW="
+				+ LOW + ", CLOSE=" + CLOSE + ", LAST=" + LAST + ", PREVCLOSE=" + PREVCLOSE + ", TOTTRDQTY=" + TOTTRDQTY
+				+ ", TOTTRDVAL=" + TOTTRDVAL + ", TIMESTAMP=" + TIMESTAMP + ", TOTALTRADES=" + TOTALTRADES + ", ISIN="
+				+ ISIN + "]";
 	}
 	
-
+	
 }
