@@ -17,8 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.google.gson.Gson;
-import com.mysql.cj.xdevapi.JsonArray;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.vit.db.jcomponent.stockexchangepredict.dao.StockPredictDao;
 import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 
@@ -26,15 +25,15 @@ import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 public class StockPredictServiceImpl implements StockPredictService {
 
 	public static Log log;
-
-//	@Autowired
-//	DomainRepository domainRepository;
 	
 	@Autowired
 	load2Mongo loadMongo;
 
 	@Autowired
 	StockPredictDao stockPredictDao;
+	
+	@Autowired
+	ComputeRange computeRange;
 
 	public ArrayList<StockExchange> postFileSectors(MultipartFile imageFile) throws IOException {
 		String content = null;
@@ -120,12 +119,16 @@ public class StockPredictServiceImpl implements StockPredictService {
 
 	@Override
 	public List<StockExchange> getStockData(String name) {
-
 		return stockPredictDao.getStockData(name);
 	}
 	
 	@Override
 	public String loadMongo(String gDate) throws Exception {
 		return loadMongo.loadMain(gDate);
+	}
+
+	@Override
+	public String dataPrediction(String gDate, String symbol) throws JsonProcessingException {
+		return computeRange.Compute(gDate, symbol);
 	}
 }

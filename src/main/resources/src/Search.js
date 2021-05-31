@@ -67,23 +67,23 @@ class Search extends React.Component {
 
         <div className="Appx">
           <table className="table table-striped">
-            {/* <thead>
-                    <tr>
-                        <td > Symbol </td>
-                        <td> Series </td>
-                        <td> Open </td>
-                        <td> High </td>
-                        <td> Low </td>
-                        <td> Close </td>
-                        <td> Last </td>
-                        <td> Prevclose </td>
-                        <td> Tottrdoty </td>
-                        <td> Tottrdval </td>
-                        <td> Timestamp </td>
-                        <td> Totaltrades </td>
-                        <td> Isin </td>
-                    </tr>
-                </thead> */}
+            <thead>
+              <tr>
+                <td> Symbol </td>
+                <td> Series </td>
+                <td> Open </td>
+                <td> High </td>
+                <td> Low </td>
+                <td> Close </td>
+                <td> Last </td>
+                <td> Prevclose </td>
+                <td> Tottrdqty </td>
+                <td> Tottrdval </td>
+                <td> Timestamp </td>
+                <td> Totaltrades </td>
+                <td> Isin </td>
+              </tr>
+            </thead>
             <tbody>
               {this.state.searchstockexchange.map((se) => (
                 <tr key={se.isin}>
@@ -95,7 +95,7 @@ class Search extends React.Component {
                   <td> {se.close} </td>
                   <td> {se.last} </td>
                   <td> {se.prevclose} </td>
-                  <td> {se.tottrdoty} </td>
+                  <td> {se.tottrdqty} </td>
                   <td> {se.tottrdval} </td>
                   <td> {se.timestamp} </td>
                   <td> {se.totaltrades} </td>

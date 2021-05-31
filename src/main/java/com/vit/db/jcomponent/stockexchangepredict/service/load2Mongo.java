@@ -193,6 +193,7 @@ public class load2Mongo {
 				}
 
 				DBCollection clx = db.getCollection(gCollectionName);
+				if(g10Days==0) { clx.drop(); }
 				SimpleDateFormat Dformat = new SimpleDateFormat("dd-MMM-yyyy");
 				Date Tdate;
 				Integer HeaderFlag = 1;

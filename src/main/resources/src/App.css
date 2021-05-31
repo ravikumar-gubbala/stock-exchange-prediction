@@ -18,6 +18,19 @@
   align-items: center;
 }
 
+.body {
+  background-color: rgb(248, 246, 253);
+}
+
+.table, td, th {
+  border: 1px solid whitesmoke;
+}
+
+.table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
 .footer {
   height: 10px;
   text-align: center;

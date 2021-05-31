@@ -2,7 +2,8 @@ import http from "./http-common";
 
 class Stockservice {
   getStockService() {
-    return http.get("/StockExchange");
+    return http.get(null);
+    //return null;
   }
 
   searchStockService(name) {
@@ -11,6 +12,12 @@ class Stockservice {
 
   loadMongoService(gdate) {
     return http.get(`/StockExchange/loadMongo?gDate=${gdate}`);
+  }
+
+  loadpredictionService(symbol, gdate) {
+    return http.get(
+      `/StockExchange/prediction?gDate=${gdate}&symbol=${symbol}`
+    );
   }
 }
 

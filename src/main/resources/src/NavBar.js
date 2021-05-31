@@ -27,14 +27,14 @@ export default function NavBar() {
             activeClassName="text-red-100 bg-gray-600"
             className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-100  text-3xl font-bold cursive"
           >
-            Prediction
+            Analyse
           </NavLink>
           <NavLink
             to="/analyse"
             activeClassName="text-red-100 bg-gray-600"
             className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-100 text-3xl font-bold cursive"
           >
-            Analyse
+            Prediction
           </NavLink>
           <NavLink
             to="/download"

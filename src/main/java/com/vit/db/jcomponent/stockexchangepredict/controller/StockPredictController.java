@@ -54,4 +54,9 @@ public class StockPredictController {
 		return stockPredictService.loadMongo(gDate);
 	}
 	
+	@GetMapping("/StockExchange/prediction")
+	String prediction(@RequestParam String gDate, String symbol ) throws Exception {
+		return stockPredictService.dataPrediction(gDate,symbol);
+	}
+	
 }
