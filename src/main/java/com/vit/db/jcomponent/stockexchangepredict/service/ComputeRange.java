@@ -412,14 +412,14 @@ public class ComputeRange {
 		hashMapCycle17.put("High", (Math.round(dcsum17thh * 100.0) / 100.0));
 
 		HashMap<String, HashMap<String, Double>> hashMapFinal = new HashMap<String, HashMap<String, Double>>();
-		hashMapFinal.put("Cycle 3", hashMapCycle3);
-		hashMapFinal.put("Cycle 5", hashMapCycle5);
-		hashMapFinal.put("Cycle 7", hashMapCycle7);
-		hashMapFinal.put("Cycle 9", hashMapCycle9);
-		hashMapFinal.put("Cycle 11", hashMapCycle11);
-		hashMapFinal.put("Cycle 13", hashMapCycle13);
-		hashMapFinal.put("Cycle 15", hashMapCycle15);
-		hashMapFinal.put("Cycle 17", hashMapCycle17);
+		hashMapFinal.put("Cycle_3", hashMapCycle3);
+		hashMapFinal.put("Cycle_5", hashMapCycle5);
+		hashMapFinal.put("Cycle_7", hashMapCycle7);
+		hashMapFinal.put("Cycle_9", hashMapCycle9);
+		hashMapFinal.put("Cycle_11", hashMapCycle11);
+		hashMapFinal.put("Cycle_13", hashMapCycle13);
+		hashMapFinal.put("Cycle_15", hashMapCycle15);
+		hashMapFinal.put("Cycle_17", hashMapCycle17);
 
 		ObjectMapper mapper = new ObjectMapper();
 		

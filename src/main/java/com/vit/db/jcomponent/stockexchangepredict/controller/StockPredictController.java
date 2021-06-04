@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.vit.db.jcomponent.stockexchangepredict.model.GScript;
 import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 import com.vit.db.jcomponent.stockexchangepredict.service.StockPredictService;
 
@@ -39,17 +40,17 @@ public class StockPredictController {
 		}
 	}
 
-	@GetMapping("/StockExchange") // get data from Mongo DB
-	List<StockExchange> getUnstructuredData() {
+	@GetMapping("/StockExchange") // Get data from Mongo DB
+	List<GScript> getUnstructuredData() {
 		return stockPredictService.getUnstructuredData();
 	}
 	
-	@GetMapping("/StockExchangeData") // get single data from Mongo DB
+	@GetMapping("/StockExchangeData") // Search Stock data from Mongo DB
 	List<StockExchange> getStockData(@RequestParam String name) {
 		return stockPredictService.getStockData(name);
 	}
 	
-	@GetMapping("/StockExchange/loadMongo")
+	@GetMapping("/StockExchange/loadMongo") // This is used for Download into Mongo DB
 	String loadMongo(@RequestParam String gDate) throws Exception {
 		return stockPredictService.loadMongo(gDate);
 	}

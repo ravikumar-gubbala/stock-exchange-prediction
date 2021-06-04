@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.vit.db.jcomponent.stockexchangepredict.model.GScript;
 import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 
 @Repository
 public interface StockPredictDao {
 
-	public List<StockExchange> getUnstructuredData();
+	public List<GScript> getUnstructuredData();
 	
 	public void setStockData(StockExchange stock);
 

@@ -98,6 +98,11 @@ class StockDataComponent extends React.Component {
 
         <div className="Appx">
           <div>
+            <div>
+              {this.state.searchstockexchange.map((cycle, index) => (
+                <p key={index}>Hello {cycle.Cycle_9}!</p>
+              ))}
+            </div>
             <button
               type="submit"
               className="text-4xl text-black cursive"

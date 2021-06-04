@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.vit.db.jcomponent.stockexchangepredict.dao.StockPredictDao;
+import com.vit.db.jcomponent.stockexchangepredict.model.GScript;
 import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 
 @Component
@@ -113,7 +114,7 @@ public class StockPredictServiceImpl implements StockPredictService {
 
 	}
 
-	public List<StockExchange> getUnstructuredData() {
+	public List<GScript> getUnstructuredData() {
 		return stockPredictDao.getUnstructuredData();
 	}
 

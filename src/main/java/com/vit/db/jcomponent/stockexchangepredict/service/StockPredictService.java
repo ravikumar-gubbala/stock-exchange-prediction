@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.vit.db.jcomponent.stockexchangepredict.model.GScript;
 import com.vit.db.jcomponent.stockexchangepredict.model.StockExchange;
 
 @Service
@@ -16,7 +17,7 @@ public interface StockPredictService {
 	
 	public ArrayList<StockExchange> postFileSectors(MultipartFile imageFile) throws FileNotFoundException, IOException;
 	
-	public List<StockExchange> getUnstructuredData();
+	public List<GScript> getUnstructuredData();
 
 	public List<StockExchange> getStockData(String name);
 

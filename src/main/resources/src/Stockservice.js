@@ -2,8 +2,7 @@ import http from "./http-common";
 
 class Stockservice {
   getStockService() {
-    return http.get(null);
-    //return null;
+    return http.get("/StockExchange");
   }
 
   searchStockService(name) {
