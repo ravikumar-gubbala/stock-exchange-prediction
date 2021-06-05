@@ -150,8 +150,8 @@ public class load2Mongo {
 		}
 		g10Days = 0;
 		while (g10Days < 10) {
-		//	System.out.println("Press Enter Key...to Proceed.... ");
-		//	String gTMPName = scanner.nextLine();
+			// System.out.println("Press Enter Key...to Proceed.... ");
+			// String gTMPName = scanner.nextLine();
 			String destDirectory = currentDirectory;
 			String zipFilePath = currentDirectory + "/" + DldFiles.get(g10Days);
 			System.out.println("Unzipping file: " + zipFilePath);
@@ -193,7 +193,9 @@ public class load2Mongo {
 				}
 
 				DBCollection clx = db.getCollection(gCollectionName);
-				if(g10Days==0) { clx.drop(); }
+				if (g10Days == 0) {
+					clx.drop();
+				}
 				SimpleDateFormat Dformat = new SimpleDateFormat("dd-MMM-yyyy");
 				Date Tdate;
 				Integer HeaderFlag = 1;
@@ -211,14 +213,22 @@ public class load2Mongo {
 					}
 					Dmap.put("SYMBOL", record.get(0));
 					Dmap.put("SERIES", record.get(1));
-					Dmap.put("OPEN", Float.parseFloat(record.get(2)));
-					Dmap.put("HIGH", Float.parseFloat(record.get(3)));
-					Dmap.put("LOW", Float.parseFloat(record.get(4)));
-					Dmap.put("CLOSE", Float.parseFloat(record.get(5)));
-					Dmap.put("LAST", Float.parseFloat(record.get(6)));
-					Dmap.put("PREVCLOSE", Float.parseFloat(record.get(7)));
+					double roundOff = Math.round(12.45 * 100) / 100;
+					roundOff = Math.round(Float.parseFloat(record.get(2)) * 100.0) / 100.0;
+					Dmap.put("OPEN", roundOff);
+					roundOff = Math.round(Float.parseFloat(record.get(3)) * 100.0) / 100.0;
+					Dmap.put("HIGH", roundOff);
+					roundOff = Math.round(Float.parseFloat(record.get(4)) * 100.0) / 100.0;
+					Dmap.put("LOW", roundOff);
+					roundOff = Math.round(Float.parseFloat(record.get(5)) * 100.0) / 100.0;
+					Dmap.put("CLOSE", roundOff);
+					roundOff = Math.round(Float.parseFloat(record.get(6)) * 100.0) / 100.0;
+					Dmap.put("LAST", roundOff);
+					roundOff = Math.round(Float.parseFloat(record.get(7)) * 100.0) / 100.0;
+					Dmap.put("PREVCLOSE", roundOff);
 					Dmap.put("TOTTRDQTY", Integer.parseInt(record.get(8)));
-					Dmap.put("TOTTRDVAL", Float.parseFloat(record.get(9)));
+					roundOff = Math.round(Float.parseFloat(record.get(9)) * 100.0) / 100.0;
+					Dmap.put("TOTTRDVAL", roundOff);
 					Tdate = Dformat.parse(record.get(10));
 					Dmap.put("TIMESTAMP", Tdate);
 					Dmap.put("TOTALTRADES", Integer.parseInt(record.get(11)));

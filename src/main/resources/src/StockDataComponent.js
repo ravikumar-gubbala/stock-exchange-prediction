@@ -58,7 +58,7 @@ class StockDataComponent extends React.Component {
     )
       .then((response) => {
         this.setState({ searchstockexchange: response.data });
-        console.log(response.data);
+        console.log("JSON is", response.data);
       })
       .catch((e) => {
         console.log(e);
@@ -104,8 +104,7 @@ class StockDataComponent extends React.Component {
             </label>
             <div>
               <td className="relative flex justify-center">
-                {" "}
-                <LineChart />{" "}
+                <LineChart />
               </td>
             </div>
             <button
