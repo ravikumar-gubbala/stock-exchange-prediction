@@ -41,10 +41,17 @@ class Download extends React.Component {
   }
 
   render() {
-    const { searchTitle } = this.state;
+    const { searchTitle, searchstockexchange } = this.state;
     return (
       <div>
         <div className="relative flex justify-center pt-12 lg:pt-30 px-8 py-10">
+          <label className="text-3xl text-white font-bold cursive">
+            The last 10 days data will be downloaded and stored directly into
+            the database
+          </label>
+        </div>
+
+        <div className="relative flex justify-center lg:pt-30 px-8 py-10">
           <div className="rounded-lg shadow-2xl p-20 form">
             <label className="text-3xl text-white-100 font-bold cursive">
               Stock Report{" "}
@@ -64,11 +71,9 @@ class Download extends React.Component {
             </button>
           </div>
         </div>
-
         <div className="Appx">
           <label className="mb-10 text-3xl text-white-100 font-bold cursive">
-            The last 10 days data will be downloaded and stored directly into
-            the database{" "}
+            {searchstockexchange}
           </label>
         </div>
       </div>

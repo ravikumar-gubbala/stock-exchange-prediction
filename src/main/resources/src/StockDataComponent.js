@@ -3,6 +3,7 @@ import Stockservice from "./Stockservice";
 import "../src/App.css";
 import "../src/ContactForm.css";
 import exportFromJSON from "export-from-json";
+import LineChart from "../src/Linechart";
 
 const fileName = "exportfile";
 const exportType = "txt";
@@ -68,7 +69,7 @@ class StockDataComponent extends React.Component {
     const { searchTitle, searchDate } = this.state;
     return (
       <div>
-        <div className="relative flex justify-center pt-12 lg:pt-30 px-8 py-10">
+        <div className="relative flex justify-center pt-12 lg:pt-50">
           <div className="rounded-lg shadow-2xl p-20 form">
             <label className="text-3xl text-white-100 font-bold cursive">
               Prediction for Stock{" "}
@@ -97,11 +98,15 @@ class StockDataComponent extends React.Component {
         </div>
 
         <div className="Appx">
-          <div>
+          <div className="pb-20">
+            <label className="text-4xl text-white-100 font-bold cursive">
+              Line Chart Analysis
+            </label>
             <div>
-              {this.state.searchstockexchange.map((cycle, index) => (
-                <p key={index}>Hello {cycle.Cycle_9}!</p>
-              ))}
+              <td className="relative flex justify-center">
+                {" "}
+                <LineChart />{" "}
+              </td>
             </div>
             <button
               type="submit"

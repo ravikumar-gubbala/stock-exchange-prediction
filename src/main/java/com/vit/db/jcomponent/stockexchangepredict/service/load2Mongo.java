@@ -246,6 +246,6 @@ public class load2Mongo {
 			}
 			g10Days++;
 		}
-		return "Upload to MongoDB Success, End of Program!!!";
+		return "Downloaded Successfully";
 	}
 }
