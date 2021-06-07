@@ -66,12 +66,12 @@ class StockDataComponent extends React.Component {
   }
 
   render() {
-    const { searchTitle, searchDate } = this.state;
+    const { searchTitle, searchDate, searchstockexchange } = this.state;
     return (
       <div>
         <div className="relative flex justify-center pt-12 lg:pt-50">
           <div className="rounded-lg shadow-2xl p-20 form">
-            <label className="text-3xl text-white-100 font-bold cursive">
+            <label className="text-2xl text-white-100 font-bold cursive">
               Prediction for Stock{" "}
             </label>
 
@@ -89,11 +89,31 @@ class StockDataComponent extends React.Component {
 
             <button
               type="submit"
-              className="text-4xl text-white-100 cursive"
+              className="text-2xl text-white-100 cursive"
               onClick={this.searchTitle}
             >
               Scan
             </button>
+          </div>
+        </div>
+        <div className="flex  justify-center pt-12">
+          <div>
+            <table className="table ml-50 pl-50">
+              <thead>
+                <tr className="cursive text-3xl text-white">
+                  <td className="height-10px"> High </td>
+                  <td className="height-10px"> Low </td>
+                </tr>
+              </thead>
+              <tbody className="cursive text-2xl text-white">
+                {Object.values(searchstockexchange).map((se) => (
+                  <tr key={se.High}>
+                    <td className="pd-5"> {se.High} </td>
+                    <td> {se.Low} </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -102,6 +122,7 @@ class StockDataComponent extends React.Component {
             <label className="text-4xl text-white-100 font-bold cursive">
               Line Chart Analysis
             </label>
+
             <div>
               <td className="relative flex justify-center">
                 <LineChart />
