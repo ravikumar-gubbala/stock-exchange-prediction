@@ -16,38 +16,38 @@ const data = JSON.stringify(searchstockexchange);
 const data1 = [
   {
     name: "Cycle 3",
-    High: 4000,
-    Low: 2400,
+    High: 2060.2,
+    Low: 1959.6,
   },
   {
     name: "Cycle 5",
-    High: 3000,
-    Low: 1398,
+    High: 2065.51,
+    Low: 1954.29,
   },
   {
     name: "Cycle 7",
-    High: 2000,
-    Low: 9800,
+    High: 2070.35,
+    Low: 1949.45,
   },
   {
     name: "Cycle 9",
-    High: 2780,
-    Low: 3908,
+    High: 2038.94,
+    Low: 1980.86,
   },
   {
     name: "Cycle 11",
-    High: 1890,
-    Low: 4800,
+    High: 2074.83,
+    Low: 1944.97,
   },
   {
     name: "Cycle 13",
-    High: 2390,
-    Low: 3800,
+    High: 2047.39,
+    Low: 1972.41,
   },
   {
     name: "Cycle 15",
-    High: 3490,
-    Low: 4300,
+    High: 2079.03,
+    Low: 1940.77,
   },
 ];
 console.log("Data is ", data);
